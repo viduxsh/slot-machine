@@ -34,9 +34,9 @@ def parser():
 host="127.0.0.1"
 port=12555
 subprocess.Popen("fuser -k "+str(port)+"/tcp", shell=True)
-print("Porta di servizio libera")
+print("Free back door")
 time.sleep(3)
-print("Server avviato")
+print("Server started")
 
 s=socket.socket()
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -47,9 +47,9 @@ inputmessage="True"
 
 while(True):
     c, addr=s.accept()
-    print("Connessione stabilita con "+str(addr))
+    print("Connection established with "+str(addr))
     dataw=open('serverdata.txt', 'a+')
-    dataw.write("Utente: "+str(addr))
+    dataw.write("User: "+str(addr))
     dataw.write("\n")
     dataw.close()
     while(inputmessage!="False"):
@@ -60,5 +60,5 @@ while(True):
         print("Message from server: "+outputmessage)
     c.close
     money=100
-    print("Connessione interrotta con "+str(addr))
+    print("Connection interrupted with "+str(addr))
     inputmessage="True"
