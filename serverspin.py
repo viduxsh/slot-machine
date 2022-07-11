@@ -18,11 +18,9 @@ def parser():
     n3=random.randint(0, 9)
     n4=random.randint(0, 9)
     winfile=" "
-    if n1==n2:
-        if n2==n3:
-            if n3==n4:
-                winfile="WIN"
-                money=money+100
+    if n1==n2==n3==n4:
+        winfile="WIN"
+        money=money+100
     output=str(n1)+"#"+str(n2)+"#"+str(n3)+"#"+str(n4)+"#"+str(money)
     dataw=open('serverdata.txt', 'a+')
     dataw.write(output+winfile)
