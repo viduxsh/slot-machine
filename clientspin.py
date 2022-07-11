@@ -30,47 +30,20 @@ def closefunction():
 
 def imagefunction(n, nc):
     n=int(n)
-    if n==0:
-        img=ImageTk.PhotoImage(Image.open("./image/wild.jpg"))
-    elif n==1:
-        img=ImageTk.PhotoImage(Image.open("./image/sunglasses.jpg"))
-    elif n==2:
-        img=ImageTk.PhotoImage(Image.open("./image/shoe.jpg"))
-    elif n==3:
-        img=ImageTk.PhotoImage(Image.open("./image/ring.jpg"))
-    elif n==4:
-        img=ImageTk.PhotoImage(Image.open("./image/phone.jpg"))
-    elif n==5:
-        img=ImageTk.PhotoImage(Image.open("./image/microphone.jpg"))
-    elif n==6:
-        img=ImageTk.PhotoImage(Image.open("./image/lipstick.jpg"))
-    elif n==7:
-        img=ImageTk.PhotoImage(Image.open("./image/icecream.jpg"))
-    elif n==8:
-        img=ImageTk.PhotoImage(Image.open("./image/drink.jpg"))
-    elif n==9:
-        img=ImageTk.PhotoImage(Image.open("./image/car.jpg"))
+    imgs = ["./image/wild.jpg", "./image/sunglasses.jpg", "./image/shoe.jpg", 
+            "./image/ring.jpg", "./image/phone.jpg", "./image/microphone.jpg", 
+            "./image/lipstick.jpg", "./image/icecream.jpg", "./image/drink.jpg", 
+            "./image/car.jpg"]
+    img=ImageTk.PhotoImage(Image.open(imgs[n]))
     panel=Label(face, image=img)
     panel.grid(row=0, column=nc)
     panel.image = img
     panel.grid(row=0, column = nc)
 
 def win(n1, n2, n3, n4):
-    int(n1)
-    int(n2)
-    int(n3)
-    int(n4)
-    if n1==n2:
-        if n2==n3:
-            if n3==n4:
-                winbox=Label(face, text="WIN!!")
-                winbox.grid(row=3, column=1)
-            else:
-                winbox=Label(face, text="                    ")
-                winbox.grid(row=3, column=1)
-        else:
-            winbox=Label(face, text="                    ")
-            winbox.grid(row=3, column=1)
+    if n1==n2==n3==n4:
+        winbox=Label(face, text="WIN!!")
+        winbox.grid(row=3, column=1)
     else:
         winbox=Label(face, text="                    ")
         winbox.grid(row=3, column=1)
